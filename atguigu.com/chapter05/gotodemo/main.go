@@ -1,4 +1,5 @@
 package main
+
 import (
 	"fmt"
 )
@@ -18,8 +19,6 @@ func main() {
 	// fmt.Println("ok5")
 	// fmt.Println("ok6")
 	// fmt.Println("ok7")
-
-
 
 	var n int = 30
 	//演示return的使用
