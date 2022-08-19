@@ -69,7 +69,7 @@ func (f *FamilySystem) Menu() {
 				fmt.Println(err)
 				return
 			}
-			_, err = conn.Do("hmset", "FamilyAccount", "Datails", 
+			_, err = conn.Do("hmset", "FamilyAccount", "Datails",
 				f.Datails, "Money", f.Money, "Total", f.Total)
 			if err != nil {
 				fmt.Println("存储失败", err)
@@ -82,7 +82,7 @@ func (f *FamilySystem) Menu() {
 				fmt.Println(err)
 				return
 			}
-			r, err := redis.Strings(conn.Do("hmget", "FamilyAccount", "Datails", 
+			r, err := redis.Strings(conn.Do("hmget", "FamilyAccount", "Datails",
 				"Money", "Total"))
 			if err != nil {
 				fmt.Println("读取失败", err)

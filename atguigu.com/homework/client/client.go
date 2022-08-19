@@ -1,14 +1,15 @@
 package main
+
 import (
+	"bufio"
 	"fmt"
 	"net"
-	"bufio"
 	"os"
 	"strings"
 )
 
 func main() {
-	conn, err := net.Dial("tcp", "localhost:8888")
+	conn, err := net.Dial("tcp", "localhost:8488")
 	if err != nil {
 		fmt.Println("net.Dial err = ", err)
 		return
@@ -24,13 +25,13 @@ func main() {
 		}
 		//如果用户输入的是 exit 就退出
 		line = strings.Trim(line, " \r\n")
-		if line ==  "exit" {
+		if line == "exit" {
 			fmt.Println("客户端退出")
 			return
 		}
 
 		//再将 line 发送给服务器
-		_, err = conn.Write([]byte(line ))
+		_, err = conn.Write([]byte(line))
 		if err != nil {
 			fmt.Println("conn.Write err = ", err)
 		}
