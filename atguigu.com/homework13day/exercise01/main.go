@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"fmt"
 	"io"
 	"os"
-	"fmt"
 )
 
 type FamilySystem struct {

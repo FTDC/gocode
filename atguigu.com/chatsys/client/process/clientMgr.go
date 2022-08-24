@@ -2,7 +2,7 @@ package process
 
 import (
 	"fmt"
-	"go_code/chatsys/common"
+	"gocode/atguigu.com/chatsys/common"
 )
 
 //客户端这边用于维护客户信息的(比如列表)
@@ -25,7 +25,7 @@ func outputUserOnline() {
 //(1) 一种情况是新登录的用户 [加入到 onlineUserMap]
 //(2) 一种情况是登录的用户下线了 [更新 ]
 func updateUserStatus(userStatusNotifyMes common.UserStatusNotifyMes) {
-	
+
 	//看看是否已经在onlineUserMap了
 	user, ok := onlineUserMap[userStatusNotifyMes.UserId]
 	if !ok {
