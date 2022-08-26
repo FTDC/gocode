@@ -15,7 +15,7 @@ func generateRandomNumber(ch chan<- int64) {
 	}
 }
 
-//get the sum of all digit of input number
+// GetSum get the sum of all digit of input number
 // 获取输入数的每一位的和
 func GetSum(s int64) int64 {
 	strNum := fmt.Sprintf("%d", s)
@@ -31,7 +31,7 @@ func GetSum(s int64) int64 {
 	return sumOfAllDigit
 }
 
-//24个线程消费生成的数据
+// JobChan 24个线程消费生成的数据
 func JobChan(wg *sync.WaitGroup, ch chan int64) (sumInfo chan int64) {
 	// var chresult chan<- int64
 	sumInfo = make(chan int64, 3000)
