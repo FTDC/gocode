@@ -1,6 +1,10 @@
-package main 
-import "fmt"
-import "encoding/json"
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+)
 
 type A struct {
 	Num int
@@ -9,11 +13,12 @@ type B struct {
 	Num int
 }
 
-type Monster struct{
-	Name string `json:"name"` // `json:"name"` 就是 struct tag
-	Age int `json:"age"`
+type Monster struct {
+	Name  string `json:"name"` // `json:"name"` 就是 struct tag
+	Age   int    `json:"age"`
 	Skill string `json:"skill"`
 }
+
 func main() {
 	var a A
 	var b B
@@ -29,6 +34,18 @@ func main() {
 	if err != nil {
 		fmt.Println("json 处理错误 ", err)
 	}
+
+	//data := make(map[string]string)
+	//anyMap := make(map[string]interface{}, 0)
+	var monster2 Monster
+	if err := json.Unmarshal(jsonStr, &monster2); err != nil {
+		panic(err)
+	}
+	log.Println("Unmarshal to struct:", monster2)
+	fmt.Println("Age", monster2.Age)
+
+	//fmt.Println("jsonStr-name", json.Unmarshal(jsonStr, &anyMap))
+
 	fmt.Println("jsonStr", string(jsonStr))
 
 }

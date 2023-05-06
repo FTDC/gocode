@@ -1,29 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"unsafe"
-)
+import "fmt"
 
 func main() {
+	//printName("xjin", "张华")
+	fr10(11)
+}
 
-	var a int64 = 15
-	var b bool = false
-	// a := 15
-	// b := false
+func fr10(n int) (res int) {
+	if n < 0 {
+		return
+	} else {
+		n := n - 1
+		fmt.Println(fr10(n))
+	}
+	return n
 
-	fmt.Println("a:", a)
-	fmt.Println("b:", b)
-	fmt.Println("nihao")
-	fmt.Println("nihao")
-	fmt.Println("时间的问题")
-
-	fmt.Printf("a 的类型 %T， a 的字节大小 %d \n", a, unsafe.Sizeof(a))
-
-	var (
-		ac   int    = 4
-		name string = "haha"
-	)
-
-	fmt.Printf("a:%d, name:%s", ac, name)
 }

@@ -1,12 +1,14 @@
 package main
+
 import (
 	"fmt"
 )
 
-type Person struct{
+type Person struct {
 	Name string
-	Age int
+	Age  int
 }
+
 func main() {
 	//方式1
 
@@ -17,15 +19,15 @@ func main() {
 	fmt.Println(p2)
 
 	//方式3-&
-	//案例: var person *Person = new (Person)
+	//案例: var person2 *Person = new (Person)
 
-	var p3 *Person= new(Person)
+	var p3 *Person = new(Person)
 	//因为p3是一个指针，因此标准的给字段赋值方式
 	//(*p3).Name = "smith" 也可以这样写 p3.Name = "smith"
 
 	//原因: go的设计者 为了程序员使用方便，底层会对 p3.Name = "smith" 进行处理
 	//会给 p3 加上 取值运算 (*p3).Name = "smith"
-	(*p3).Name = "smith" 
+	(*p3).Name = "smith"
 	p3.Name = "john" //
 
 	(*p3).Age = 30
@@ -33,16 +35,16 @@ func main() {
 	fmt.Println(*p3)
 
 	//方式4-{}
-	//案例: var person *Person = &Person{}
+	//案例: var person2 *Person = &Person{}
 
 	//下面的语句，也可以直接给字符赋值
-	//var person *Person = &Person{"mary", 60} 
+	//var person2 *Person = &Person{"mary", 60}
 	var person *Person = &Person{}
 
 	//因为person 是一个指针，因此标准的访问字段的方法
-	// (*person).Name = "scott"
-	// go的设计者为了程序员使用方便，也可以 person.Name = "scott"
-	// 原因和上面一样，底层会对 person.Name = "scott" 进行处理， 会加上 (*person)
+	// (*person2).Name = "scott"
+	// go的设计者为了程序员使用方便，也可以 person2.Name = "scott"
+	// 原因和上面一样，底层会对 person2.Name = "scott" 进行处理， 会加上 (*person2)
 	(*person).Name = "scott"
 	person.Name = "scott~~"
 

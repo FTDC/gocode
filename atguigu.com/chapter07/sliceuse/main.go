@@ -1,6 +1,9 @@
 package main
+
 import (
 	"fmt"
+	"io/ioutil"
+	"regexp"
 )
 
 func main() {
@@ -14,13 +17,20 @@ func main() {
 	fmt.Println("slice的size=", len(slice))
 	fmt.Println("slice的cap=", cap(slice))
 
-
 	//方式3
 	fmt.Println()
 	//第3种方式：定义一个切片，直接就指定具体数组，使用原理类似make的方式
 	var strSlice []string = []string{"tom", "jack", "mary"}
 	fmt.Println("strSlice=", strSlice)
 	fmt.Println("strSlice size=", len(strSlice)) //3
-	fmt.Println("strSlice cap=", cap(strSlice)) // ?
+	fmt.Println("strSlice cap=", cap(strSlice))  // ?
 
+	fmt.Println("FindDigits", FindDigits("./test.txt"))
+}
+
+var digitRegexp = regexp.MustCompile("[0-9]+")
+
+func FindDigits(filename string) []byte {
+	b, _ := ioutil.ReadFile(filename)
+	return digitRegexp.Find(b)
 }

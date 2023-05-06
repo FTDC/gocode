@@ -1,7 +1,9 @@
 package main
+
 import (
 	"fmt"
-	"go_code/chapter10/factory/model"
+	"gocode/atguigu.com/chapter10/factory/model"
+	_ "gocode/atguigu.com/chapter10/factory/model"
 )
 
 func main() {

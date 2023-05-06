@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"unicode"
 )
 
 func main() {
 
 	//重点讲解 /、%
 	//说明，如果运算的数都是整数，那么除后，去掉小数部分，保留整数部分
+	fmt.Println(unicode.Pi)
 	fmt.Println(10 / 4)
 
 	var n1 float32 = 10 / 4 //

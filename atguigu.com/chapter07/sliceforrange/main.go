@@ -47,4 +47,14 @@ func main() {
 	copy(slice5, slice4)
 	fmt.Println("slice4=", slice4) // 1, 2, 3, 4, 5
 	fmt.Println("slice5=", slice5) // 1, 2, 3, 4, 5, 0 , 0 ,0,0,0
+
+	items := [...]int{10, 20, 30, 40, 50}
+	for _, item := range items {
+		item2 := &item
+		*item2 *= 2
+	}
+	fmt.Println("items=", items)
+
+	fmt.Println("changdu", len(items[3:3]))
+	fmt.Println("changdu2", len(items[3:4]))
 }

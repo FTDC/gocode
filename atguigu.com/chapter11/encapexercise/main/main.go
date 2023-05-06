@@ -1,8 +1,12 @@
 package main
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
-	"go_code/chapter11/encapexercise/model"
+	"gocode/atguigu.com/chapter11/encapexercise/model"
+	"io"
+	"os"
 )
 
 func main() {
@@ -13,4 +17,11 @@ func main() {
 	} else {
 		fmt.Println("创建失败")
 	}
+
+	var r io.Reader
+	r = os.Stdin // see 12.1
+	r = bufio.NewReader(r)
+	r = new(bytes.Buffer)
+	f, _ := os.Open("test.txt")
+	r = bufio.NewReader(f)
 }
