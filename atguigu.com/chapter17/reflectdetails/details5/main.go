@@ -15,8 +15,10 @@ func reflect01(b interface{}) {
 	// 看看 rVal的Kind是
 	fmt.Printf("rVal kind=%v\n", rVal.Kind())
 	//3. rVal
-	//Elem返回v持有的接口保管的值的Value封装，或者v持有的指针指向的值的Value封装
-	rVal.Elem().SetInt(20)
+	if ok := rVal.CanSet(); ok {
+		//Elem返回v持有的接口保管的值的Value封装，或者v持有的指针指向的值的Value封装
+		rVal.Elem().SetInt(20)
+	}
 }
 
 func main() {

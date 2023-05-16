@@ -22,3 +22,4 @@ go.work
 *.iml
 .idea/*
 .vscode/*
+.cloudbase/container/debug.json

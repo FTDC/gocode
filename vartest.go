@@ -4,9 +4,9 @@ import "fmt" // Package implementing formatted I/O.
 
 func main() {
 	var a, b, c int
-	a, b, c = 5, 7, "abc"
+	a, b, c = 5, 7, 6
 
-	fmt.Print(a, b, c)
+	fmt.Println(a, b, c)
 
 	fmt.Printf("Καλημέρα κόσμε; or こんにちは 世界\n")
 }
